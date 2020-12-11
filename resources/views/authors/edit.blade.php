@@ -39,10 +39,14 @@
             {{Form::text('zip', $author->zip, ['class'=>'form-control', 'placeholder'])}}
         </div>
         <div class="form-group form-group-sm">
+            {{Form::label('nationality', 'nationaliteit')}}
+            {{Form::text('nationality', $author->nationality, ['class'=>'form-control', 'placeholder'])}}
+        </div>
+        <div class="form-group form-group-sm">
             {{Form::label('contract', 'contract')}}
             {{Form::checkbox('contract', null, $author->contract)}}
         </div>        <!-- Een hidden form element om een PUT actie te spoofen
-        Hierdoor kunnen we de ROUTE PUT gebruiken (zie  'php artisan route: list') 
+        Hierdoor kunnen we de ROUTE PUT gebruiken (zie  'php artisan route: list')
         -->
         {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Bewaar', ['class' => 'btn btn-primary'])}}

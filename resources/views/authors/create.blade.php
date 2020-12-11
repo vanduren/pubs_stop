@@ -39,6 +39,10 @@
             {{Form::text('zip', '', ['class'=>'form-control', 'placeholder'])}}
         </div>
         <div class="form-group form-group-sm">
+            {{Form::label('nationality', 'nationaliteit')}}
+            {{Form::text('nationality', '', ['class'=>'form-control', 'placeholder'])}}
+        </div>
+        <div class="form-group form-group-sm">
             {{Form::label('contract', 'contract')}}
             {{Form::checkbox('contract')}}
         </div>

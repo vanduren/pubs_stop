@@ -5,7 +5,7 @@
     @if(count($titles)>0)
         @foreach($titles as $titel)
             <div class="well well-sm">
-                <a href="/pubs/titles/{{$titel->title_id}}">{{$titel->title}}</a>
+                <a href="titles/{{$titel->title_id}}">{{$titel->title}}</a>
             </div>
         @endforeach
         {{$titles->links()}}

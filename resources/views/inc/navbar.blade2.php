@@ -20,60 +20,59 @@
 
             <ul class="nav navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/pubs">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Titels</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <p><a class="dropdown-item" href="/pubs/titles">Titels<span class="sr-only">(current)</span></a></p>
+                        <p><a class="dropdown-item" href="titles">Titels<span class="sr-only">(current)</span></a></p>
                         <p><a class="dropdown-divider"><span class="sr-only">(current)</span></a></p>
-                        <p><a class="dropdown-item" href="/pubs/titles/create">Nieuwe titel<span class="sr-only">(current)</span></a></p>
+                        <p><a class="dropdown-item" href="titles/create">Nieuwe titel<span class="sr-only">(current)</span></a></p>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Auteurs</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <p><a class="dropdown-item" href="/pubs/authors">Auteurs<span class="sr-only"></span></a></p>
+                        <p><a class="dropdown-item" href="authors">Auteurs<span class="sr-only"></span></a></p>
                         <p><a class="dropdown-divider"><span class="sr-only"></span></a></p>
-                        <p><a class="dropdown-item" href="/pubs/authors/create">Nieuwe auteur<span class="sr-only"></span></a></p>
+                        <p><a class="dropdown-item" href="authors/create">Nieuwe auteur<span class="sr-only"></span></a></p>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/pubs/about">Info</a>
+                    <a class="nav-link" href="about">Info</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/pubs/faq">Help</a>
+                    <a class="nav-link" href="faq">Help</a>
                 </li>
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @if (Auth::guest())
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}">Register</a></li>
                 @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
 
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
+                                Logout
+                            </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/pubs/home">Dashboard</a>
-                            </li>
-                        </ul>
-                    </li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="home">Dashboard</a>
+                        </li>
+                    </ul>
+                </li>
                 @endif
             </ul>
         </div>
